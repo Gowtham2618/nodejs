@@ -14,7 +14,7 @@ const  {createJWT,verifyJWT} = require('../../hook/hook');
 
 
 app.post('/signup',Auth,createJWT,ctrl.userdatatoDB);
-app.post('/login',verifyJWT,ctrl.checkUsertoDB);
+app.post('/login',Auth,ctrl.checkUsertoDB);
 app.get('/:user_id',verifyJWT,ctrl.getUser);
 app.get('/',verifyJWT,ctrl.getUsers);
 app.put('/:user_id',verifyJWT,ctrl.updateUser);

@@ -16,7 +16,27 @@ const projectsDetails = new Schema({
   user_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "userDetails"
-  }
+  },
+  user: [
+    {
+      address: [
+        {
+          street: {
+            type:String
+          },
+          city: {
+            type: String
+          },
+          pincode: {
+            type:String
+          },
+          state: {
+            type: String
+          }
+        }
+      ]
+    }
+  ]
 },
 {
   timestamps: true
